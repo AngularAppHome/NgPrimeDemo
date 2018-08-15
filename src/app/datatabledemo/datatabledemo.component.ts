@@ -55,6 +55,7 @@ export class DatatabledemoComponent implements OnInit {
           this.cars = cars;
           console.log(cars);
           this.car = null;
+          this.displayDialog = false;
         });
     }
 
@@ -69,6 +70,7 @@ export class DatatabledemoComponent implements OnInit {
          this.carService.getCarsSmall().then(cars =>{
            this.cars = cars;
            this.car = null;
+           this.displayDialog = false;
           });
     }
 
