@@ -51,6 +51,11 @@ export class DatatabledemoComponent implements OnInit {
         this.displayDialog = false;
         console.log(this.car);
         this.carService.createDepartment(this.car).then(res=>console.log(res));
+        this.carService.getCarsSmall().then(cars => {
+          this.cars = cars;
+          console.log(cars);
+          this.car = null;
+        });
     }
 
     delete() {
@@ -61,6 +66,10 @@ export class DatatabledemoComponent implements OnInit {
         debugger
         console.log(this.car._id);
         this.carService.deleteDepartment(this.car._id).subscribe(res=>console.log(res));
+         this.carService.getCarsSmall().then(cars =>{
+           this.cars = cars;
+           this.car = null;
+          });
     }
 
     onRowSelect(event) {
